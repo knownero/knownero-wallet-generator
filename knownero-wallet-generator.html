@@ -10820,7 +10820,13 @@ function genwallet(lang)
   mnemonic_widget.innerHTML = mnemonic;
 
   // only monero has the URI scheme
-  qr = null;
+  if (prefix_widget.value == "B") {
+    qr=new QRCode(address_qr_widget, {correctLevel:QRCode.CorrectLevel.L});
+    qr.makeCode(keys.public_addr);
+  }
+  else {
+    qr = null;
+  }
 }
 
 previous_button_text = "";
