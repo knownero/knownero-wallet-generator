@@ -96,6 +96,18 @@
 <head>
   <title>Knownero wallet generator</title>
   <meta charset="UTF-8">
+    <style>
+        @media print {
+            .noprint{
+
+                display:none
+
+            }
+            #address_widget {
+                word-break: break-all;
+            }
+        }
+    </style>
     <style type="text/css">
         html {
             line-height: 1.3;
@@ -10654,7 +10666,7 @@ html { font-family: sans-serif }
 </div>
 
 
-    <div class="row">
+    <div class="row noprint">
         <div class="col s12">
             <p>
                 This page generates a new Knownero
@@ -10667,7 +10679,7 @@ html { font-family: sans-serif }
             </p>
         </div>
     </div>
-    <div class="row center-align">
+    <div class="row center-align noprint">
         <div class="col s12">
                 <input class="btn btn-large orange" type="button" onclick="js:genwallet(null);"
                        value="Generate wallet" id="gen_with_custom_entropy_button" action=""/>
@@ -10696,7 +10708,7 @@ html { font-family: sans-serif }
                 <div class="card-content light-green-text text-darken-4">
                     <span class="card-title light-green-text text-darken-4">
                       Public address
-                      <input type="button" class="waves-effect waves-light btn" onclick="js:toggle_qr();" value="Show QR code" action=""
+                      <input type="button" class="waves-effect waves-light btn noprint" onclick="js:toggle_qr();" value="Show QR code" action=""
                          style="line-height: 25px; height: 25px; font-size: 60%; padding: 0px 1.5rem;"/ id="show_qr_code">
                     </span>
 
@@ -10705,7 +10717,7 @@ html { font-family: sans-serif }
                     </p>
                 </div>
                 <div class="card-action center-align">
-                    <pre class="center-align" id="address_widget">generating...</pre>
+                    <div class="center-align" id="address_widget">generating...</div>
                     <span class="qrcode" id="address_qr_widget" onclick="js:toggle_qr();"></span>
                 </div>
             </div>
@@ -10761,7 +10773,7 @@ html { font-family: sans-serif }
 
 
 <div class="row">&nbsp;</div>
-<footer class="page-footer grey lighten-3 grey-text text-darken-4">
+<footer class="page-footer grey lighten-3 grey-text text-darken-4 noprint">
     <div class="container">
         <div class="row">
             <div class="col l12">
